@@ -1,0 +1,116 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ferreira.filipe.jornaldeofertas.CadastroActivity">
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+
+            <EditText
+                android:id="@+id/editTextNome"
+                android:hint="Nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:hint="E-mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/editTextTelefone"
+                android:hint="Telefone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text|phone" />
+
+
+            <EditText
+                android:id="@+id/editTextRua"
+                android:hint="Rua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+
+
+            <EditText
+                android:id="@+id/editTextNumero"
+                android:hint="Numero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text|number" />
+
+
+            <EditText
+                android:id="@+id/editTextBairro"
+                android:hint="Bairro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName" />
+
+
+
+
+            <Spinner
+                android:id="@+id/spinnerCidade"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_margin="20px"
+                />
+
+
+            <EditText
+                android:id="@+id/editTextSenha"
+                android:hint="Senha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword"
+                 />
+
+            <ProgressBar
+                android:id="@+id/progressBarSalvarCliente"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:visibility="invisible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnConfirma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="confirma" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
