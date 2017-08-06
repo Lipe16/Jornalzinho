@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import ferreira.filipe.jornaldeofertas.CadastroActivity;
 import ferreira.filipe.jornaldeofertas.MainActivity;
@@ -27,6 +28,7 @@ public class CadastrarPessoaClienteService extends AsyncTask {
     private Context context;
     int progresso = 0;
     int i = 0;
+    boolean resposta;
 
 
 
@@ -43,7 +45,7 @@ public class CadastrarPessoaClienteService extends AsyncTask {
 
 
         PessoaDAO pessoaDAO = new PessoaDAO();
-        pessoaDAO.cadastrarPessoaCliente(cidade_id, cliente, context);
+        resposta = pessoaDAO.cadastrarPessoaCliente(cidade_id, cliente, context);
 
 
 
@@ -79,6 +81,9 @@ public class CadastrarPessoaClienteService extends AsyncTask {
 
         bar.setProgress(15);
 
+        if(!resposta) {
+            Toast.makeText(context, "Erro ao cadastrar: verifique sua conexão com a internet", Toast.LENGTH_LONG).show();
+        }
 
         Intent intent = new Intent(context, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

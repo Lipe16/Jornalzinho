@@ -4,6 +4,7 @@ package ferreira.filipe.jornaldeofertas.dao;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.gson.JsonObject;
@@ -37,13 +38,17 @@ public class PessoaDAO extends Pessoa {
                     @Override
                     public void onCompleted(Exception e, JsonObject result) {
 
-                        if(result.get("retorno").getAsString().equals("YES")){
+                        try {
+                            if (result.get("retorno").getAsString().equals("YES")) {
 
 
-                            pronto = true;
+                                pronto = true;
 
-                        }else{
+                            } else {
 
+                            }
+                        }catch (Exception ex){
+                            Log.d("Erro","Sem resposta da internet");
                         }
 
 

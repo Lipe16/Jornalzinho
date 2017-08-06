@@ -38,9 +38,6 @@ public class CadastroActivity extends AppCompatActivity {
 
         spinnerCidade = (Spinner) findViewById(R.id.spinnerCidade);
 
-        CidadePopulaSpinnerService populaSpinner = new CidadePopulaSpinnerService(getBaseContext(), spinnerCidade);
-        populaSpinner.execute();
-
         //campos
         final EditText edNome = (EditText) findViewById(R.id.editTextNome);
         final EditText edEmail = (EditText) findViewById(R.id.editTextEmail);
@@ -50,9 +47,13 @@ public class CadastroActivity extends AppCompatActivity {
         final EditText edBairro = (EditText) findViewById(R.id.editTextBairro);
         final EditText edSenha = (EditText) findViewById(R.id.editTextSenha);
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBarSalvarCliente);
-
-
         final Button btnConfirma = (Button) findViewById(R.id.btnConfirma);
+
+        CidadePopulaSpinnerService populaSpinner = new CidadePopulaSpinnerService(getBaseContext(), spinnerCidade, btnConfirma);
+        populaSpinner.execute();
+
+
+
 
         btnConfirma.setOnClickListener(new View.OnClickListener() {
             @Override
