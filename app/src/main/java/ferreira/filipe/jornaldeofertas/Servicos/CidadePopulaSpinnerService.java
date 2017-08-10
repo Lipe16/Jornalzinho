@@ -78,7 +78,7 @@ public class CidadePopulaSpinnerService extends AsyncTask{
             CidadeAdapterBean cidadeAdapterBean = new CidadeAdapterBean(context, android.R.layout.simple_spinner_item, cidades);
             spinner.setAdapter(cidadeAdapterBean);
         }catch (Exception ex){
-            Toast.makeText(context, "ERRO: sem internet não é possivel cadastrar-se", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "ERRO: sem internet não é possivel cadastrar-se", Toast.LENGTH_LONG).show();
             btnConfirma.setClickable(false);
         }
 

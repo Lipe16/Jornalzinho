@@ -73,12 +73,12 @@ public class CadastroActivity extends AppCompatActivity {
                     PessoaDAO pessoaDAO = new PessoaDAO();
 
                     if(verificaCamposBean.verificaCampos(campos, getBaseContext())){
-                        if(spinnerCidade.getCount() > 0) {
+                        if(!spinnerCidade.getSelectedItem().equals("") && spinnerCidade.getSelectedItem() != null) {
                             btnConfirma.setClickable(false);
                             progressBar.setVisibility(View.VISIBLE);
                             progressBar.animate();
                             progressBar.setProgress(0);
-                            progressBar.setMax(12);
+                            progressBar.setMax(20);
                             progressBar.setFocusable(true);
 
 

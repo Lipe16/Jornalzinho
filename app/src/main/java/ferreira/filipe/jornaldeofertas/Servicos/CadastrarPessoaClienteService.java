@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import ferreira.filipe.jornaldeofertas.CadastroActivity;
+import ferreira.filipe.jornaldeofertas.LogandoActivity;
 import ferreira.filipe.jornaldeofertas.MainActivity;
 import ferreira.filipe.jornaldeofertas.dao.PessoaDAO;
 import ferreira.filipe.jornaldeofertas.entidades.Cliente;
@@ -45,12 +46,13 @@ public class CadastrarPessoaClienteService extends AsyncTask {
 
 
         PessoaDAO pessoaDAO = new PessoaDAO();
-        resposta = pessoaDAO.cadastrarPessoaCliente(cidade_id, cliente, context);
+        pessoaDAO.cadastrarPessoaCliente(cidade_id, cliente, context);
 
 
 
-        while(!pessoaDAO.pronto && i < 12){
+        while(!pessoaDAO.pronto && i < 20){
             try {
+
                 progresso++;
                 Log.d("Thread","aguardando cadastrar");
                 Thread.sleep(1000);
@@ -63,8 +65,7 @@ public class CadastrarPessoaClienteService extends AsyncTask {
             publishProgress(i);
         }
 
-
-
+        resposta = pessoaDAO.pronto;
 
         return null;
     }
@@ -79,13 +80,17 @@ public class CadastrarPessoaClienteService extends AsyncTask {
     protected void onPostExecute(Object o) {
         super.onPostExecute(o);
 
-        bar.setProgress(15);
+        bar.setProgress(20);
 
         if(!resposta) {
             Toast.makeText(context, "Erro ao cadastrar: verifique sua conexão com a internet", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(context, "Parabéns você está cadastrado!", Toast.LENGTH_LONG).show();
         }
 
-        Intent intent = new Intent(context, MainActivity.class);
+        Intent intent = new Intent(context, LogandoActivity.class);
+        intent.putExtra("email",cliente.getEmail().toString());
+        intent.putExtra("senha",cliente.getSenha().toString());
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }

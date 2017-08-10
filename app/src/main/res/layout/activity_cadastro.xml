@@ -4,10 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/megafone"
     tools:context="ferreira.filipe.jornaldeofertas.CadastroActivity">
 
 
@@ -27,34 +24,38 @@
             <EditText
                 android:id="@+id/editTextNome"
                 android:hint="Nome"
+                android:textColorHint="#ece8e8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
+                android:textSize="20dp"
                 android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/editTextEmail"
                 android:hint="E-mail"
+                android:textColorHint="#ece8e8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
+                android:textSize="20dp"
                 android:inputType="textEmailAddress" />
 
             <EditText
                 android:id="@+id/editTextTelefone"
                 android:hint="Telefone"
+                android:textColorHint="#ece8e8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
+                android:textSize="20dp"
                 android:inputType="text|phone" />
 
 
             <EditText
                 android:id="@+id/editTextRua"
                 android:hint="Rua"
+                android:textColorHint="#ece8e8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
+                android:textSize="20dp"
                 android:inputType="textPersonName" />
 
 
@@ -62,37 +63,40 @@
             <EditText
                 android:id="@+id/editTextNumero"
                 android:hint="Numero"
+                android:textColorHint="#ece8e8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
+                android:textSize="20dp"
                 android:inputType="text|number" />
 
 
             <EditText
                 android:id="@+id/editTextBairro"
                 android:hint="Bairro"
+                android:textColorHint="#ece8e8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:textSize="20dp"
                 android:inputType="textPersonName" />
-
-
 
 
             <Spinner
                 android:id="@+id/spinnerCidade"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_margin="20px"
+                android:layout_height="wrap_content"
+                android:layout_margin="7px"
+                android:textSize="25dp"
+                android:textStyle="bold"
                 />
 
 
             <EditText
                 android:id="@+id/editTextSenha"
                 android:hint="Senha"
+                android:textColorHint="#ece8e8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
+                android:textSize="20dp"
                 android:inputType="textPassword"
                  />
 
@@ -107,7 +111,14 @@
                 android:id="@+id/btnConfirma"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="confirma" />
+                android:background="#4DFBFBFB"
+                android:elevation="24dp"
+
+                android:shadowColor="#d1fcafb9"
+                android:text="confirma"
+                android:textColor="#D10A14A6"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
 
 
