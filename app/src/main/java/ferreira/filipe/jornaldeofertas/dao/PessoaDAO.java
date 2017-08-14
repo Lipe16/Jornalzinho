@@ -20,9 +20,11 @@ import ferreira.filipe.jornaldeofertas.entidades.Pessoa;
 
 public class PessoaDAO extends Pessoa {
     public boolean pronto = false;
+    public boolean emailJaExiste = false;
 
     public boolean cadastrarPessoaCliente(int cidade_id, Cliente cliente, final Context context){
         pronto = false;
+        emailJaExiste = false;
 
         Ion.with(context).load("http://techsolucoes.com/webservicos/inserirPessoaCliente.php")
                 .setBodyParameter("nome", cliente.getPessoa().getNome().toString())
@@ -44,7 +46,10 @@ public class PessoaDAO extends Pessoa {
 
                                 pronto = true;
 
-                            } else {
+                            }else if(result.get("retorno").getAsString().equals("EMAIL_JA_EXISTE")) {
+                                emailJaExiste = true;
+                                pronto = true;
+                            }else{
 
                             }
                         }catch (Exception ex){

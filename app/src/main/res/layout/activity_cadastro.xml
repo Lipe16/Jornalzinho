@@ -4,9 +4,8 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:background="@drawable/megafone"
+    android:background="@drawable/fundo"
     tools:context="ferreira.filipe.jornaldeofertas.CadastroActivity">
-
 
 
 
@@ -24,7 +23,7 @@
             <EditText
                 android:id="@+id/editTextNome"
                 android:hint="Nome"
-                android:textColorHint="#ece8e8"
+                android:textColorHint="#708090"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -33,7 +32,7 @@
             <EditText
                 android:id="@+id/editTextEmail"
                 android:hint="E-mail"
-                android:textColorHint="#ece8e8"
+                android:textColorHint="#708090"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -42,7 +41,7 @@
             <EditText
                 android:id="@+id/editTextTelefone"
                 android:hint="Telefone"
-                android:textColorHint="#ece8e8"
+                android:textColorHint="#708090"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -52,7 +51,7 @@
             <EditText
                 android:id="@+id/editTextRua"
                 android:hint="Rua"
-                android:textColorHint="#ece8e8"
+                android:textColorHint="#708090"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -63,7 +62,7 @@
             <EditText
                 android:id="@+id/editTextNumero"
                 android:hint="Numero"
-                android:textColorHint="#ece8e8"
+                android:textColorHint="#708090"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -73,7 +72,7 @@
             <EditText
                 android:id="@+id/editTextBairro"
                 android:hint="Bairro"
-                android:textColorHint="#ece8e8"
+                android:textColorHint="#708090"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -93,7 +92,7 @@
             <EditText
                 android:id="@+id/editTextSenha"
                 android:hint="Senha"
-                android:textColorHint="#ece8e8"
+                android:textColorHint="#708090"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -104,6 +103,7 @@
                 android:id="@+id/progressBarSalvarCliente"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:visibility="invisible"
+                android:layout_margin="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -114,6 +114,7 @@
                 android:background="#4DFBFBFB"
                 android:elevation="24dp"
 
+                android:fontFamily="casual"
                 android:shadowColor="#d1fcafb9"
                 android:text="confirma"
                 android:textColor="#D10A14A6"

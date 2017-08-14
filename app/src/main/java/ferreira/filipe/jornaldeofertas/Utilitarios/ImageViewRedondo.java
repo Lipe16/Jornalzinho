@@ -7,16 +7,16 @@ package ferreira.filipe.jornaldeofertas.Utilitarios;
 
 
 import android.content.Context;
-        import android.graphics.Bitmap;
-        import android.graphics.Bitmap.Config;
-        import android.graphics.Canvas;
-        import android.graphics.Paint;
-        import android.graphics.PorterDuff;
-        import android.graphics.PorterDuffXfermode;
-        import android.graphics.Rect;
-        import android.graphics.drawable.Drawable;
-        import android.util.AttributeSet;
-        import android.widget.ImageView;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.util.AttributeSet;
+import android.widget.ImageView;
 
 public class ImageViewRedondo extends android.support.v7.widget.AppCompatImageView{
 

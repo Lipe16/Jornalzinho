@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -30,14 +31,17 @@ public class CadastrarPessoaClienteService extends AsyncTask {
     int progresso = 0;
     int i = 0;
     boolean resposta;
+    public boolean emailJaExiste = false;
+    Button btnConfirma;
 
 
 
-    public CadastrarPessoaClienteService(Cliente cliente, int cidade_id, Context context, ProgressBar bar){
+    public CadastrarPessoaClienteService(Cliente cliente, int cidade_id, Context context, ProgressBar bar, Button btnConfirma){
         this.context = context;
         this.bar = bar;
         this.cliente = cliente;
         this.cidade_id = cidade_id;
+        this.btnConfirma = btnConfirma;
     }
 
     @Override
@@ -65,6 +69,7 @@ public class CadastrarPessoaClienteService extends AsyncTask {
             publishProgress(i);
         }
 
+        emailJaExiste = pessoaDAO.emailJaExiste;
         resposta = pessoaDAO.pronto;
 
         return null;
@@ -84,15 +89,26 @@ public class CadastrarPessoaClienteService extends AsyncTask {
 
         if(!resposta) {
             Toast.makeText(context, "Erro ao cadastrar: verifique sua conexão com a internet", Toast.LENGTH_LONG).show();
+            btnConfirma.setClickable(true);
         }else{
-            Toast.makeText(context, "Parabéns você está cadastrado!", Toast.LENGTH_LONG).show();
+
+            if(emailJaExiste) {
+
+                Toast.makeText(context, "Email já existe!", Toast.LENGTH_LONG).show();
+                btnConfirma.setClickable(true);
+
+            }else{
+                Toast.makeText(context, "Parabéns você está cadastrado!", Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(context, LogandoActivity.class);
+                intent.putExtra("email", cliente.getEmail().toString());
+                intent.putExtra("senha", cliente.getSenha().toString());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
         }
 
-        Intent intent = new Intent(context, LogandoActivity.class);
-        intent.putExtra("email",cliente.getEmail().toString());
-        intent.putExtra("senha",cliente.getSenha().toString());
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
+
     }
 
 

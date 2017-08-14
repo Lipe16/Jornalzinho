@@ -90,4 +90,14 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(new Intent(getBaseContext(), OfertasActivity.class));
         }
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        //verifica se login é válido
+        if(id == 0){
+        }else{
+            startActivity(new Intent(getBaseContext(), OfertasActivity.class));
+        }
+    }
 }

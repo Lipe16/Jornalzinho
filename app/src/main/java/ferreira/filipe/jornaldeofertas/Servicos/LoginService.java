@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -60,6 +61,7 @@ public class LoginService extends AsyncTask {
     @Override
     protected void onProgressUpdate(Object[] values) {
         super.onProgressUpdate(values);
+        progressBar.setVisibility(View.VISIBLE);
         progressBar.setProgress(i);
     }
 
@@ -73,7 +75,8 @@ public class LoginService extends AsyncTask {
         Log.d("LoginService", cliente.getEmail());
 
         if(!pronto) {
-            Toast.makeText(context, "Erro loginService 01", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Erro: Verifique se os dados estão corretos", Toast.LENGTH_LONG).show();
+            progressBar.setVisibility(View.INVISIBLE);
         }else{
             Toast.makeText(context, "Parabéns você está Logado!", Toast.LENGTH_LONG).show();
 

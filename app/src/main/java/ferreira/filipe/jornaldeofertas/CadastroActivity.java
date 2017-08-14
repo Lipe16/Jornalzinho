@@ -54,7 +54,6 @@ public class CadastroActivity extends AppCompatActivity {
 
 
 
-
         btnConfirma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,7 +84,7 @@ public class CadastroActivity extends AppCompatActivity {
                             cliente = verificaCamposBean.popularPessoaCliente(campos);
 
                             //pessoaDAO.cadastrarPessoaCliente(Integer.parseInt(spinnerCidade.getSelectedItem().toString()), cliente, getBaseContext());
-                            CadastrarPessoaClienteService cadastrarPessoaClienteService = new CadastrarPessoaClienteService(cliente, Integer.parseInt(spinnerCidade.getSelectedItem().toString()), getBaseContext(), progressBar);
+                            CadastrarPessoaClienteService cadastrarPessoaClienteService = new CadastrarPessoaClienteService(cliente, Integer.parseInt(spinnerCidade.getSelectedItem().toString()), getBaseContext(), progressBar, btnConfirma);
                             cadastrarPessoaClienteService.execute();
                         }else{
 

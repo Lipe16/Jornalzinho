@@ -1,83 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/megafone"
-    android:columnCount="2"
-    android:rowCount="3"
-    tools:context="ferreira.filipe.jornaldeofertas.OfertasActivity">
+    android:background="@drawable/fundo">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="4">
 
 
-    <RelativeLayout
-        android:layout_columnSpan="2"
-        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_columnSpan="2">
 
-        <TextView
-            android:id="@+id/textViewEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
-            android:text="teste@teste.com"
-            android:textColor="#FF2F2F2F"
-            android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textViewEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="sans-serif"
+                android:text="teste@teste.com"
+                android:textColor="#FF2F2F2F"
+                android:textSize="18sp" />
 
-        <Button
-            android:id="@+id/btnSair"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:background="#39656462"
-            android:elevation="24dp"
-            android:fontFamily="sans-serif-condensed"
-            android:text="Sair"
-            android:textSize="16sp" />
-    </RelativeLayout>
+            <Button
+                android:id="@+id/btnSair"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="#39656462"
+                android:elevation="24dp"
+                android:fontFamily="sans-serif"
+                android:text="Sair"
+                android:textSize="14sp" />
+        </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_columnSpan="2"
+        <RelativeLayout android:layout_columnSpan="2"
 
-        >
+            >
 
-        <TextView
-            android:id="@+id/textViewTitulo"
+            <TextView
+                android:id="@+id/textViewTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="1dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="Categorias"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
-            android:gravity="center"
-            android:text="Categorias"
-            android:textColor="#FFC00006"
-            android:textSize="36sp" />
+            android:layout_columnSpan="2"
+            android:layout_margin="2dp">
 
-    </RelativeLayout>
+            <Button
+                android:id="@+id/btnCategoriaAlimentos"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="2dp"
+                android:background="#5F000000"
+                android:elevation="24dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:hint="1"
+                android:text="Alimentos"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btnCategoriaVitaminas"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="2dp"
+                android:background="#5F000000"
+                android:elevation="24dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:hint="2"
+                android:text="Vitaminas"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btnCategoriaMedicamentos"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/btnCategoriaAlimentos"
+                android:layout_margin="2dp"
+                android:background="#5F000000"
+                android:elevation="24dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:hint="3"
+                android:text="Medicament"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btnCategoriaOutros"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnCategoriaVitaminas"
+                android:layout_alignParentRight="true"
+                android:layout_margin="2dp"
+                android:background="#5F000000"
+                android:elevation="24dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:hint="4"
+                android:text="Outros"
+                android:textSize="18sp" />
+
+            <ProgressBar
+                android:id="@+id/progressBarOfertas"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnCategoriaOutros"
+                android:layout_margin="2dp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/listViewProdutos"
+            android:layout_width="match_parent"
+            android:layout_height="350dp">
+
+        </ListView>
+
+    </GridLayout>
 
 
-    <RelativeLayout
-        android:layout_columnSpan="2"
-        android:layout_rowSpan="2">
-
-
-        <ferreira.filipe.jornaldeofertas.Utilitarios.ImageViewRedondo
-            android:id="@+id/ImageViewVitaminas"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/laranja" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ImageViewVitaminas"
-            android:gravity="center"
-            android:text="Vitaminas"
-            android:textColor="@color/colorAccent"
-            android:textSize="30sp" />
-
-    </RelativeLayout>
-
-
-</GridLayout>
+</LinearLayout>

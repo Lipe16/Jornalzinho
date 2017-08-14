@@ -8,7 +8,7 @@ public class Produto {
     private int id;
     private String codigoBarras;
     private String nome;
-    private byte[] imagem;
+    private String imagem;
     private double preco;
     private Categoria categoria;
 
@@ -37,11 +37,11 @@ public class Produto {
         this.nome = nome;
     }
 
-    public byte[] getImagem() {
+    public String getImagem() {
         return imagem;
     }
 
-    public void setImagem(byte[] imagem) {
+    public void setImagem(String imagem) {
         this.imagem = imagem;
     }
 

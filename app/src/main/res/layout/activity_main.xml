@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:gravity="bottom"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/fundo"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-
-    android:background="@drawable/megafone"
-     android:weightSum="1">
-
-
+    android:layout_height="match_parent">
 
      <LinearLayout
-    android:orientation="vertical"
-    android:gravity="top"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:gravity="top"
+         android:orientation="vertical">
 
+         <ferreira.filipe.jornaldeofertas.Utilitarios.ImageViewRedondo
+             android:layout_width="200dp"
+             android:layout_height="200dp"
+             android:layout_gravity="center"
+             app:srcCompat="@drawable/ofertas" />
+
+         <Space
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:minHeight="15dp"
+             android:visibility="visible" />
 
          <Button
              android:id="@+id/btnEntrar"
@@ -25,37 +31,39 @@
              android:layout_height="wrap_content"
              android:background="#4DFBFBFB"
              android:elevation="24dp"
-             android:fontFamily="sans-serif"
+             android:fontFamily="casual"
              android:text="Entrar"
              android:textColor="#D10A14A6"
-             android:textSize="60dp"
+             android:textSize="45dp"
+             android:textStyle="bold" />
+         <Space
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:minHeight="30dp"
+             android:visibility="visible" />
+
+         <Button
+             android:id="@+id/btnCadastro"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignParentBottom="true"
+             android:background="#4DFBFBFB"
+             android:elevation="24dp"
+             android:fontFamily="casual"
+             android:text="Cadastre-se"
+             android:textColor="#8B0000"
+             android:textSize="25dp"
              android:textStyle="bold" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="50dp"
-        android:visibility="visible" />
+
+     </LinearLayout>
 
 
-</LinearLayout>
 
 
-    <Button
-        android:id="@+id/btnCadastro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#4DFBFBFB"
-        android:elevation="24dp"
-        android:fontFamily="sans-serif"
-        android:text="Cadastre-se"
-        android:textColor="@color/colorPrimary"
-        android:textColorLink="@color/colorAccent"
-        android:textSize="25dp"
-        android:textStyle="bold" />
 
 
-</LinearLayout>
+</ScrollView>
 
 
 
