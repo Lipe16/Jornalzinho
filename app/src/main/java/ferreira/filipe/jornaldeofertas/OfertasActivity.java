@@ -8,12 +8,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 
-import ferreira.filipe.jornaldeofertas.Servicos.BuscarProdutosService;
+import ferreira.filipe.jornaldeofertas.bean.CategoriaAdapterBean;
+import ferreira.filipe.jornaldeofertas.servicos.BuscarProdutosService;
+import ferreira.filipe.jornaldeofertas.servicos.PopularSpinnerCategoriaService;
 
 public class OfertasActivity extends AppCompatActivity {
     int id;
@@ -45,7 +49,6 @@ public class OfertasActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         verificaLogin();
-        carregaComponentes();
 
 
     }
@@ -64,58 +67,25 @@ public class OfertasActivity extends AppCompatActivity {
 
     //carrega os botões da tela e seus respoctivos listeners
     public void carregaComponentes() {
+        /*
         final Button btnCategoriaAlimentos = (Button) findViewById(R.id.btnCategoriaAlimentos);
         final Button btnCategoriaMedicamentos = (Button) findViewById(R.id.btnCategoriaMedicamentos);
         final Button btnCategoriaVitaminas = (Button) findViewById(R.id.btnCategoriaVitaminas);
         final Button btnCategoriaOutros = (Button) findViewById(R.id.btnCategoriaOutros);
         final ProgressBar bar = (ProgressBar) findViewById(R.id.progressBarOfertas);
-        Button btnSair = (Button) findViewById(R.id.btnSair);
 
+
+         */
+        final Spinner spinerCategoria = (Spinner) findViewById(R.id.spinnerCategoria);
+        final ProgressBar barCategoria = (ProgressBar) findViewById(R.id.progressBarCategoria);
+        final ProgressBar barOfertas = (ProgressBar) findViewById(R.id.progressBarOfertas);
+        Button btnSair = (Button) findViewById(R.id.btnSair);
         final ListView listView = (ListView) findViewById(R.id.listViewProdutos);
 
-        bar.setMax(12);
-        bar.animate();
-
-        // no clique deste botão, produtos são apresentados na tela
-        btnCategoriaAlimentos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("pressionou botao", "categoria alimentos");
-                bar.setVisibility(View.VISIBLE);
-                BuscarProdutosService buscarProdutosService = new BuscarProdutosService(atividade, getBaseContext(), Integer.parseInt(btnCategoriaAlimentos.getHint().toString()), listView, bar);
-                buscarProdutosService.execute();
-            }
-        });
-
-        btnCategoriaMedicamentos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("pressionou botao", "categoria");
-                bar.setVisibility(View.VISIBLE);
-                BuscarProdutosService buscarProdutosService = new BuscarProdutosService(atividade, getBaseContext(), Integer.parseInt(btnCategoriaMedicamentos.getHint().toString()), listView, bar);
-                buscarProdutosService.execute();
-            }
-        });
-
-        btnCategoriaVitaminas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("pressionou botao", "categoria");
-                bar.setVisibility(View.VISIBLE);
-                BuscarProdutosService buscarProdutosService = new BuscarProdutosService(atividade, getBaseContext(), Integer.parseInt(btnCategoriaVitaminas.getHint().toString()), listView, bar);
-                buscarProdutosService.execute();
-            }
-        });
-
-        btnCategoriaOutros.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("pressionou botao", "categoria");
-                bar.setVisibility(View.VISIBLE);
-                BuscarProdutosService buscarProdutosService = new BuscarProdutosService(atividade, getBaseContext(), Integer.parseInt(btnCategoriaOutros.getHint().toString()), listView, bar);
-                buscarProdutosService.execute();
-            }
-        });
+        barOfertas.setMax(15);
+        barOfertas.animate();
+        PopularSpinnerCategoriaService popularSpinnerCategoriaService = new PopularSpinnerCategoriaService(getBaseContext(), spinerCategoria, barCategoria, barOfertas, atividade,  listView);
+        popularSpinnerCategoriaService.execute();
 
 
         //deslogar

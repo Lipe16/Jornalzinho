@@ -1,26 +1,18 @@
-package ferreira.filipe.jornaldeofertas.Servicos;
+package ferreira.filipe.jornaldeofertas.servicos;
 
-import android.app.Activity;
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.TaskStackBuilder;
 import android.util.Base64;
 import android.util.Log;
-import android.widget.ListView;
-import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -94,7 +86,7 @@ public class VerificaOfertasService extends Service implements Runnable{
             PendingIntent pi = PendingIntent.getActivity(this, 0, new Intent(this, OfertasActivity.class), 0);
 
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-                    .setSmallIcon(R.drawable.cast_ic_notification_0)
+                    .setSmallIcon(R.drawable.ofertas)
                     .setTicker("Não perca nossas ofertas!")
                     .setContentTitle("Produto: "+produto.getNome())
                     .setContentText("Custando hoje o valor de R$"+String.valueOf(produto.getPreco())+" e não é só isso, venha conferir tudo que preparamos pra você.")
@@ -117,7 +109,7 @@ public class VerificaOfertasService extends Service implements Runnable{
             PendingIntent pi = PendingIntent.getActivity(this, 0, new Intent(this, OfertasActivity.class), 0);
 
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-                    .setSmallIcon(R.drawable.cast_ic_notification_0)
+                    .setSmallIcon(R.drawable.ofertas)
                     .setTicker("Não perca nossas ofertas!")
                     .setContentTitle("Jornal de ofertas")
                     .setContentText("venha conferir tudo que preparamos pra você.")

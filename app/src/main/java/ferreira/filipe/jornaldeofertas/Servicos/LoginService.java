@@ -1,4 +1,4 @@
-package ferreira.filipe.jornaldeofertas.Servicos;
+package ferreira.filipe.jornaldeofertas.servicos;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,9 +9,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import ferreira.filipe.jornaldeofertas.MainActivity;
 import ferreira.filipe.jornaldeofertas.OfertasActivity;
-import ferreira.filipe.jornaldeofertas.R;
 import ferreira.filipe.jornaldeofertas.dao.ClienteDAO;
 import ferreira.filipe.jornaldeofertas.entidades.Cliente;
 

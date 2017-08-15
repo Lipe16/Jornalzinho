@@ -1,10 +1,7 @@
-package ferreira.filipe.jornaldeofertas.Servicos;
+package ferreira.filipe.jornaldeofertas.servicos;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.database.Cursor;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
@@ -15,10 +12,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import ferreira.filipe.jornaldeofertas.LogandoActivity;
-import ferreira.filipe.jornaldeofertas.R;
 import ferreira.filipe.jornaldeofertas.Utilitarios.AdapterPersonalizado;
-import ferreira.filipe.jornaldeofertas.dao.PessoaDAO;
 import ferreira.filipe.jornaldeofertas.dao.ProdutosDAO;
 import ferreira.filipe.jornaldeofertas.entidades.Produto;
 
@@ -90,7 +84,7 @@ public class BuscarProdutosService extends AsyncTask {
             Toast.makeText(context, "Erro ao pesquisar: verifique conexão com a internet", Toast.LENGTH_LONG).show();
 
         }else{
-            Toast.makeText(context, "Pronto, ai estão os resultados que você pediu!", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Pesquisa realizada!", Toast.LENGTH_LONG).show();
 
             //chamada da nossa implementação
             AdapterPersonalizado adapter =

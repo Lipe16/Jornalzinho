@@ -12,7 +12,9 @@
         android:columnCount="3"
         android:rowCount="2">
 
-        <RelativeLayout android:padding="10dp" android:layout_height="120dp">
+        <RelativeLayout
+            android:layout_height="80dp"
+            android:padding="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -22,8 +24,8 @@
 
                 <ferreira.filipe.jornaldeofertas.Utilitarios.ImageViewRedondo
                     android:id="@+id/imageViewModelo"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true" />
 
@@ -64,7 +66,7 @@
                 android:layout_alignParentRight="true"
                 android:text="RS 5.90"
                 android:textColor="#E5DD0003"
-                android:textSize="50sp"
+                android:textSize="35sp"
                 android:textStyle="italic" />
         </RelativeLayout>
     </GridLayout>

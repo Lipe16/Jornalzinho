@@ -3,7 +3,6 @@ package ferreira.filipe.jornaldeofertas;
 import android.support.v7.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,8 +12,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import ferreira.filipe.jornaldeofertas.Servicos.CadastrarPessoaClienteService;
-import ferreira.filipe.jornaldeofertas.Servicos.CidadePopulaSpinnerService;
+import ferreira.filipe.jornaldeofertas.servicos.CadastrarPessoaClienteService;
+import ferreira.filipe.jornaldeofertas.servicos.CidadePopulaSpinnerService;
 import ferreira.filipe.jornaldeofertas.bean.VerificaCamposBean;
 import ferreira.filipe.jornaldeofertas.dao.CidadeDAO;
 import ferreira.filipe.jornaldeofertas.dao.PessoaDAO;

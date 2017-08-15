@@ -1,23 +1,17 @@
-package ferreira.filipe.jornaldeofertas.Servicos;
+package ferreira.filipe.jornaldeofertas.servicos;
 
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import ferreira.filipe.jornaldeofertas.CadastroActivity;
 import ferreira.filipe.jornaldeofertas.bean.CidadeAdapterBean;
 import ferreira.filipe.jornaldeofertas.dao.CidadeDAO;
 import ferreira.filipe.jornaldeofertas.entidades.Cidade;
-
-import static ferreira.filipe.jornaldeofertas.R.id.spinnerCidade;
 
 /**
  * Created by filipe on 02/08/17.

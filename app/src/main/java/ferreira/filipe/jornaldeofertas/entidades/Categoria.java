@@ -25,4 +25,8 @@ public class Categoria {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public String toString(){
+        return String.valueOf(this.id);//esse metodo é para o spiner retorna id da categoria
+    }
 }

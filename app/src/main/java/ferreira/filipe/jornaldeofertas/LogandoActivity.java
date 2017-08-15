@@ -1,11 +1,10 @@
 package ferreira.filipe.jornaldeofertas;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 
-import ferreira.filipe.jornaldeofertas.Servicos.LoginService;
+import ferreira.filipe.jornaldeofertas.servicos.LoginService;
 import ferreira.filipe.jornaldeofertas.entidades.Cliente;
 
 public class LogandoActivity extends AppCompatActivity {
