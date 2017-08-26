@@ -53,7 +53,7 @@ public class VerificaOfertasService extends Service implements Runnable{
 
         boolean pronto = false;
         ProdutosDAO produtosDAO = new ProdutosDAO();
-        produtos = produtosDAO.listar(1, this.getBaseContext());
+        produtos = produtosDAO.listar(1, this.getBaseContext(),1);
 
 
         while(!produtosDAO.pronto && i < 35){

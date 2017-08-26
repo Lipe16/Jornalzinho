@@ -13,19 +13,19 @@
         android:rowCount="2">
 
         <RelativeLayout
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:padding="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="60dp"
                 android:orientation="horizontal">
 
 
                 <ferreira.filipe.jornaldeofertas.Utilitarios.ImageViewRedondo
                     android:id="@+id/imageViewModelo"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true" />
 
@@ -53,7 +53,7 @@
                         android:layout_below="@id/textViewModeloId"
                         android:text="teste"
                         android:textColor="#E5000427"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
@@ -66,7 +66,7 @@
                 android:layout_alignParentRight="true"
                 android:text="RS 5.90"
                 android:textColor="#E5DD0003"
-                android:textSize="35sp"
+                android:textSize="20sp"
                 android:textStyle="italic" />
         </RelativeLayout>
     </GridLayout>

@@ -28,11 +28,12 @@ public class ProdutosDAO extends Pessoa {
     List<Produto> produtosList = new ArrayList<>();
     public boolean pronto = false;
 
-    public List<Produto> listar(int categoria, Context context) {
+    public List<Produto> listar(int categoria, Context context, int linhaInicial) {
         pronto = false;
         Ion.with(context)
                 .load("http://techsolucoes.com/webservicos/listarProdutos.php")
                 .setBodyParameter("categoria", String.valueOf(categoria))
+                .setBodyParameter("linha", String.valueOf(linhaInicial))
                 .asJsonArray().setCallback(new FutureCallback<JsonArray>() {
             @Override
             public void onCompleted(Exception e, JsonArray result) {

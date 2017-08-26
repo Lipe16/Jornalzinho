@@ -21,6 +21,7 @@ import ferreira.filipe.jornaldeofertas.servicos.PopularSpinnerCategoriaService;
 
 public class OfertasActivity extends AppCompatActivity {
     int id;
+    int pagina=1;
     String email;
     private Activity atividade;
 
@@ -67,25 +68,51 @@ public class OfertasActivity extends AppCompatActivity {
 
     //carrega os botões da tela e seus respoctivos listeners
     public void carregaComponentes() {
-        /*
-        final Button btnCategoriaAlimentos = (Button) findViewById(R.id.btnCategoriaAlimentos);
-        final Button btnCategoriaMedicamentos = (Button) findViewById(R.id.btnCategoriaMedicamentos);
-        final Button btnCategoriaVitaminas = (Button) findViewById(R.id.btnCategoriaVitaminas);
-        final Button btnCategoriaOutros = (Button) findViewById(R.id.btnCategoriaOutros);
-        final ProgressBar bar = (ProgressBar) findViewById(R.id.progressBarOfertas);
-
-
-         */
         final Spinner spinerCategoria = (Spinner) findViewById(R.id.spinnerCategoria);
         final ProgressBar barCategoria = (ProgressBar) findViewById(R.id.progressBarCategoria);
         final ProgressBar barOfertas = (ProgressBar) findViewById(R.id.progressBarOfertas);
         Button btnSair = (Button) findViewById(R.id.btnSair);
         final ListView listView = (ListView) findViewById(R.id.listViewProdutos);
+        final Button btn1 = (Button) findViewById(R.id.btn1);
+        final Button btn2 = (Button) findViewById(R.id.btn2);
+        final Button btn3 = (Button) findViewById(R.id.btn3);
 
-        barOfertas.setMax(15);
+        btn1.setVisibility(View.INVISIBLE);
+        btn2.setVisibility(View.INVISIBLE);
+        btn3.setVisibility(View.INVISIBLE);
+
+        barOfertas.setMax(25);
         barOfertas.animate();
-        PopularSpinnerCategoriaService popularSpinnerCategoriaService = new PopularSpinnerCategoriaService(getBaseContext(), spinerCategoria, barCategoria, barOfertas, atividade,  listView);
+        PopularSpinnerCategoriaService popularSpinnerCategoriaService = new PopularSpinnerCategoriaService(getBaseContext(), spinerCategoria, barCategoria, barOfertas, atividade,  listView, btn1,btn2,btn3, pagina);
         popularSpinnerCategoriaService.execute();
+
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pagina = Integer.parseInt(btn1.getText().toString());
+                PopularSpinnerCategoriaService popularSpinnerCategoriaService = new PopularSpinnerCategoriaService(getBaseContext(), spinerCategoria, barCategoria, barOfertas, atividade,  listView, btn1,btn2,btn3, pagina);
+                popularSpinnerCategoriaService.execute();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pagina = Integer.parseInt(btn2.getText().toString());
+                PopularSpinnerCategoriaService popularSpinnerCategoriaService = new PopularSpinnerCategoriaService(getBaseContext(), spinerCategoria, barCategoria, barOfertas, atividade,  listView, btn1,btn2,btn3, pagina);
+                popularSpinnerCategoriaService.execute();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pagina = Integer.parseInt(btn3.getText().toString());
+                PopularSpinnerCategoriaService popularSpinnerCategoriaService = new PopularSpinnerCategoriaService(getBaseContext(), spinerCategoria, barCategoria, barOfertas, atividade,  listView, btn1,btn2,btn3, pagina);
+                popularSpinnerCategoriaService.execute();
+            }
+        });
 
 
         //deslogar

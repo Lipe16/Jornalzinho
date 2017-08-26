@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
@@ -31,24 +32,31 @@ public class PopularSpinnerCategoriaService extends AsyncTask {
         private ProgressBar barCategoria, barOfertas;
         private Activity atividade;
         private ListView listView;
+        private Button  btn1,btn2,btn3;
+        private  int pagina= 1;
         int x = 0;
 
 
 
-        public PopularSpinnerCategoriaService(Context context, Spinner spinner, ProgressBar barCategoria, ProgressBar barOfertas, Activity atividade, ListView listView){
+
+        public PopularSpinnerCategoriaService(Context context, Spinner spinner, ProgressBar barCategoria, ProgressBar barOfertas, Activity atividade, ListView listView, Button btn1,Button btn2,Button btn3, int pagina){
             this.context = context;
             this.spinner = spinner;
             this.barCategoria = barCategoria;
             this.barOfertas = barOfertas;
             this.atividade = atividade;
             this.listView = listView;
+            this.btn1 = btn1;
+            this.btn2 = btn2;
+            this.btn3 = btn3;
+            this.pagina = pagina;
 
         }
 
         @Override
         protected Object doInBackground(Object[] objects) {
             CategoriaDAO categoriaDAO = new CategoriaDAO();
-             categoriaList = categoriaDAO.listar(context);
+            categoriaList = categoriaDAO.listar(context);
 
 
             int i = 0;
@@ -92,7 +100,8 @@ public class PopularSpinnerCategoriaService extends AsyncTask {
                 }
 
 
-                CategoriaAdapterBean categoriaAdapterBean = new CategoriaAdapterBean(context, android.R.layout.simple_spinner_dropdown_item, categorias, atividade);
+                final CategoriaAdapterBean categoriaAdapterBean = new CategoriaAdapterBean(context, android.R.layout.simple_spinner_dropdown_item, categorias, atividade);
+                //spinner.setPrompt("Selecione uma categoria");
                 spinner.setAdapter(categoriaAdapterBean);
 
 
@@ -102,7 +111,7 @@ public class PopularSpinnerCategoriaService extends AsyncTask {
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                         Log.d("pressionou botao", "categoria alimentos");
                         barOfertas.setVisibility(View.VISIBLE);
-                        BuscarProdutosService buscarProdutosService = new BuscarProdutosService(atividade, context, Integer.parseInt(spinner.getSelectedItem().toString()), listView, barOfertas);
+                        BuscarProdutosService buscarProdutosService = new BuscarProdutosService(atividade, context, Integer.parseInt(spinner.getSelectedItem().toString()), listView, barOfertas, btn1, btn2,btn3,pagina);
                         buscarProdutosService.execute();
                     }
 
@@ -111,6 +120,8 @@ public class PopularSpinnerCategoriaService extends AsyncTask {
 
                     }
                 });
+
+
 
 
             }catch (Exception ex){
